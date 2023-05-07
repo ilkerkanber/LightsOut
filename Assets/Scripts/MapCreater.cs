@@ -161,23 +161,23 @@ public class MapCreater : MonoBehaviour
         {
             ConvertToValue(firstX, firstY + 1);
         }
-        //Çapraz
-        if (firstX - 1 >= 0 && firstY - 1 >= 0)
-        {
-            ConvertToValue(firstX - 1, firstY - 1);
-        }
-        if (firstX + 1 < X && firstY - 1 >= 0)
-        {
-            ConvertToValue(firstX + 1, firstY - 1);
-        }
-        if (firstX - 1 >= 0 && firstY + 1 < Y)
-        {
-            ConvertToValue(firstX - 1, firstY + 1);
-        }
-        if (firstX + 1 < X && firstY + 1 < Y)
-        {
-            ConvertToValue(firstX + 1, firstY + 1);
-        }
+        ////Çapraz
+        //if (firstX - 1 >= 0 && firstY - 1 >= 0)
+        //{
+        //    ConvertToValue(firstX - 1, firstY - 1);
+        //}
+        //if (firstX + 1 < X && firstY - 1 >= 0)
+        //{
+        //    ConvertToValue(firstX + 1, firstY - 1);
+        //}
+        //if (firstX - 1 >= 0 && firstY + 1 < Y)
+        //{
+        //    ConvertToValue(firstX - 1, firstY + 1);
+        //}
+        //if (firstX + 1 < X && firstY + 1 < Y)
+        //{
+        //    ConvertToValue(firstX + 1, firstY + 1);
+        //}
         UpdateCubeColors();
     }
     void ConvertToValue(int newX,int newY)

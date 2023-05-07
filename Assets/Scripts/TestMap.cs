@@ -35,7 +35,7 @@ public class TestMap : MonoBehaviour
         {
             trycount = 0;
             triedList.Clear();
-            long resultTop = GetFakt(MaxTryCount);
+            long resultTop = GetFakt(MaxTryCount); 
             long resultBot = GetFakt(i) * GetFakt(MaxTryCount - i);
             int requiredTryCount =(int)( resultTop / resultBot);
             while (requiredTryCount != trycount)
@@ -167,23 +167,23 @@ public class TestMap : MonoBehaviour
         {
             ConvertToValue(firstX, firstY + 1);
         }
-        //Çapraz
-        if (firstX - 1 >= 0 && firstY - 1 >= 0)
-        {
-            ConvertToValue(firstX - 1, firstY - 1);
-        }
-        if (firstX + 1 < X && firstY - 1 >= 0)
-        {
-            ConvertToValue(firstX + 1, firstY - 1);
-        }
-        if (firstX - 1 >= 0 && firstY + 1 < Y)
-        {
-            ConvertToValue(firstX - 1, firstY + 1);
-        }
-        if (firstX + 1 < X && firstY + 1 < Y)
-        {
-            ConvertToValue(firstX + 1, firstY + 1);
-        }
+        ////Çapraz
+        //if (firstX - 1 >= 0 && firstY - 1 >= 0)
+        //{
+        //    ConvertToValue(firstX - 1, firstY - 1);
+        //}
+        //if (firstX + 1 < X && firstY - 1 >= 0)
+        //{
+        //    ConvertToValue(firstX + 1, firstY - 1);
+        //}
+        //if (firstX - 1 >= 0 && firstY + 1 < Y)
+        //{
+        //    ConvertToValue(firstX - 1, firstY + 1);
+        //}
+        //if (firstX + 1 < X && firstY + 1 < Y)
+        //{
+        //    ConvertToValue(firstX + 1, firstY + 1);
+        //}
     }
     void ClearTint()
     {
