@@ -35,9 +35,7 @@ public class TestMap : MonoBehaviour
         {
             trycount = 0;
             triedList.Clear();
-            long resultTop = GetFakt(MaxTryCount); 
-            long resultBot = GetFakt(i) * GetFakt(MaxTryCount - i);
-            int requiredTryCount =(int)( resultTop / resultBot);
+            double requiredTryCount = CalculateFormula(MaxTryCount, i);
             while (requiredTryCount != trycount)
             {
                 StartTry(i);
@@ -46,6 +44,7 @@ public class TestMap : MonoBehaviour
                     break;
                 }
                 yield return null;
+                Debug.Log("Req"+requiredTryCount+" Now:"+trycount);
             }
             if (completed)
             {
@@ -54,6 +53,7 @@ public class TestMap : MonoBehaviour
         }
     }
     public void StartTry(int size)
+
     {
         int[] triedSize = new int[size];
         for (int nullVal = 0; nullVal < triedSize.Length; nullVal++)
@@ -217,7 +217,18 @@ public class TestMap : MonoBehaviour
         }
         _mapCreater.matrix[newX, newY] = _mapCreater.matrix[newX, newY] == 0 ? 1 : 0;
     }
-    long GetFakt(int number)
+    double CalculateFormula(int n,int div)
+    {
+        int f = n - div;
+        double result = 1;
+        for (int i = f+1; i <= n; i++)
+        {
+            result *= i;
+        }
+        result = result / GetFakt(div);
+        return result;
+    }
+    double GetFakt(int number)
     {
         long fakt = 1;
         for (int i = 1; i<= number; i++)
